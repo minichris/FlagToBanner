@@ -125,7 +125,9 @@ namespace HoI4FlagStretch
                     bw.Write((short)image.Height);
                     bw.Write((byte)32); //32 bit bitmap
                     bw.Write((byte)8); //Descriptor
-                                       //End of Header
+                    //End of Header
+
+                    image.RotateFlip(RotateFlipType.RotateNoneFlipY);
 
                     var bitmapdata = image.LockBits(
                         new Rectangle(0, 0, image.Width, image.Height),
